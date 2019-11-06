@@ -11,10 +11,10 @@
     <script src="https://kit.fontawesome.com/2a88cfd370.js" crossorigin="anonymous"></script>
 
 
-    <title>Dom's Portfolio Website</title>
+    <title>Contact Me</title>
 </head>
 
-<body id="bg-img">
+<body>
     <div class="overlay">
 
     </div>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <ul class="menu-nav">
-                <li class="nav-item current">
+                <li class="nav-item">
                     <a href="index.html" class="nav-link current">Home</a>
                 </li>
                 <li class="nav-item">
@@ -41,33 +41,33 @@
                 <li class="nav-item">
                     <a href="projects.html" class="nav-link">Projects</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item current">
                     <a href="contact.html" class="nav-link">Contact Me</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main id="home">
+    <main id="contact">
         <h1 class="lg-heading"><b>
-                Dom <span class="text-secondary">Patino</b></span>
+                Contact <span class="text-secondary">Me</b></span>
         </h1>
-        <h2 class="sm-heading">
-            Web Developer, Programmer, & UI Designer
-        </h2>
-        <div class="icons">
-            <a href="https://www.linkedin.com/in/dominique-patino/">
-                <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-            <a href="https://github.com/dpatino07">
-                <i class="fab fa-github fa-2x"></i>
-            </a>
-            <a href="../dist/img/CV_ND_Dom_Patino.pdf" download>
-                <i class="fa fa-file-download fa-2x"></i>
-                <b>Download Resume</b>
-            </a>
+
+        <div class="contact-section">
+            <form class="contact-form" action="index.html" method="post" required>
+                <input type="text" name="text" class="contact-form-text" placeholder="John Doe" required>
+                <input type="email" name="email" class="contact-form-text" placeholder="john.doe123@example.com"
+                    pattern="^.+@.+$" required>
+                <textarea class="contact-form-text" placeholder="Drop me a message..." required></textarea>
+                <input type="submit" class="btn btn-gradient" value="Send">
+            </form>
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+        &copy; Copyright 2019 | Design by Dom Patino
+    </footer>
 
     <script src="js/main.js"></script>
 </body>

@@ -2,13 +2,14 @@
 @import 'menu';
 
 
+
 * {
     box-sizing: border-box;
 }
 
 body {
     @include background;
-    background: $primary-color;
+    background: #002E63;
     color: set-text-color($primary-color);
     height: 100%;
     margin: 0;
@@ -29,7 +30,6 @@ h1, h2, h3 {
     &.sm-heading {
         margin-bottom: 2rem;
         padding: 0.2rem 1rem;
-        background: rgba(lighten($primary-color, 2), 0.5);
     }
 }
 
@@ -50,8 +50,9 @@ header {
 
 main {
     padding: 4rem;
-    // height: 100%;
+    // Sticky Footer using Calc
     min-height: calc(100vh - 60px);
+    text-align: center;
 
     .icons {
         margin-top: 1rem;
@@ -61,7 +62,7 @@ main {
 
             &:hover {
                 color: $secondary-color;
-                @include easeOut();
+                @include easeOut;
             }
         }
     }
@@ -74,49 +75,169 @@ main {
     }
 }
 
-
+// About    
 .about-info {
     display: grid;
+    grid-gap: 30px;
     grid-template-areas:
     'bioimage bio bio'
-    'job1 job2 job3';
+    't-skills s-skills certs';
     grid-template-columns: repeat(3, 1fr);
 
     .bio-image {
         grid-area: bioimage;
         margin: auto;
-        border-radius: 50%;
         border: $secondary-color 3px solid;
+        border-radius: 10px;
+        width: 250px;
+        height: 250px;
     }
     
     .bio {
         grid-area: bio;
-        font-size: 1.5rem;
+        font-size: 1rem;
+
+        .bio-content {
+            border: 2px solid #fff;
+            background: darken($secondary-color, 20);
+            border-radius: 10px;
+            margin: 25px;
+            padding: 20px;
+            text-align: center;
+            color: set-text-color($primary-color);
+        }
+    }
+
+    // Grid Areas
+    .t-skills {
+        grid-area: t-skills;
     }
     
-    .job-1 {
-        grid-area: job1
+    .s-skills {
+        grid-area: s-skills;
     }
     
-    .job-2 {
-        grid-area: job2
-    }
-    
-    .job-3 {
-        grid-area: job3
+    .certs {
+        grid-area: certs;
     }
     
     .job {
-        background: lighten($primary-color, 5);
+        background: darken(#fff, 15);
         padding: 0.5rem;
-        border-bottom: $secondary-color 5px solid;
+        border-radius: 10px;
+        border-bottom: $secondary-color 9px solid;
+        color: $primary-color;
+
+        h3 {
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+
+        .card-list {
+            display: block;
+            list-style: none;
+            text-align: left;
+        }
     }
 }
+
+// Projects
+.projects {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    img {
+        width: auto;
+        height: 175px;
+        border: 3px #fff solid;
+        border-radius: 10px;
+
+        &:hover() {
+            opacity: 0.7;
+            border-color: $secondary-color;
+            @include easeOut;
+        }
+    }
+
+    .btn-line {
+        display: flex;
+        align-items: flex-start;
+    }
+
+}
+
+// Contact Page
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+
+    .contact-form {
+        position: relative;
+        height: 350px;
+        width: 400px;
+        max-height: 100%;
+        min-width: 300px;
+        background: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 1.5rem 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    input, textarea {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin: 10px;
+    }
+
+    textarea {
+        resize: vertical;
+        height: 100px;
+    }
+}
+
+// Button Styles
+.btn {
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 0;
+    margin-bottom: 0.3rem;
+
+    &:hover {
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
+    }
+}
+
+.btn-dark {
+    @extend .btn;
+    background: darken($secondary-color, 20);
+    color: #fff;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.btn-light {
+    @extend .btn;
+    background: lighten($secondary-color, 30);
+    color: #333;
+    border-radius: 20px;
+    width: 100%;
+}
+
 
 #main-footer {
     text-align: center;
     padding: 1rem;
-    background: darken($primary-color, 10);
+    background: lighten($primary-color, 10);
     color: set-text-color($primary-color);
     height: 60px;
 }
