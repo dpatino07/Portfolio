@@ -417,7 +417,10 @@ main#home h1 {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100px;
-    height: 100px; }
+    height: 100px;
+    background: url("/img/propic.png");
+    width: 150px;
+    height: 150px; }
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 't-skills' 's-skills' 'certs';
     -ms-grid-columns: 1fr;

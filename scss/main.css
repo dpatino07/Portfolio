@@ -492,6 +492,9 @@ main#home h1 {
     background-size: cover;
     width: 100px;
     height: 100px;
+    background: url("/img/propic.png");
+    width: 150px;
+    height: 150px;
   }
   .about-info {
         grid-template-areas: 'bioimage' 'bio' 't-skills' 's-skills' 'certs';
