@@ -2,13 +2,17 @@
 @import 'menu';
 
 
+
 * {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     @include background;
-    background: $primary-color;
     color: set-text-color($primary-color);
     height: 100%;
     margin: 0;
@@ -21,15 +25,15 @@ h1, h2, h3 {
     margin: 0;
     font-weight: 400;
 
-
     &.lg-heading {
         font-size: 6rem;
+        text-shadow: 2px 2px #444;
     }
 
     &.sm-heading {
         margin-bottom: 2rem;
         padding: 0.2rem 1rem;
-        background: rgba(lighten($primary-color, 2), 0.5);
+        text-shadow: 2px 2px #444;
     }
 }
 
@@ -45,23 +49,25 @@ header {
 }
 
 .text-secondary {
-    color: $secondary-color;
+    color: #3BB9FF;
+    text-shadow: 2px 2px #444;
 }
 
 main {
-    padding: 4rem;
-    // height: 100%;
+    padding: 3rem;
+    // Sticky Footer using Calc
     min-height: calc(100vh - 60px);
 
     .icons {
         margin-top: 1rem;
+        text-shadow: 2px 2px #444;
 
         a {
             padding: 0.4rem;
 
             &:hover {
                 color: $secondary-color;
-                @include easeOut();
+                @include easeOut;
             }
         }
     }
@@ -74,51 +80,177 @@ main {
     }
 }
 
-
+// About    
 .about-info {
     display: grid;
+    grid-gap: 30px;
     grid-template-areas:
     'bioimage bio bio'
-    'job1 job2 job3';
+    't-skills s-skills certs';
     grid-template-columns: repeat(3, 1fr);
 
     .bio-image {
         grid-area: bioimage;
         margin: auto;
-        border-radius: 50%;
         border: $secondary-color 3px solid;
+        border-radius: 10px;
+        width: 250px;
+        height: 250px;
     }
     
     .bio {
         grid-area: bio;
-        font-size: 1.5rem;
+        font-size: 1rem;
+
+        .bio-content {
+            background: darken(#fff, 15);
+            margin-top: 2.5rem;
+            padding: 0.5rem;
+            border-radius: 10px;
+            border: $secondary-color 2px solid;
+            color: $primary-color;
+        }
+    }
+
+    // Grid Areas
+    .t-skills {
+        grid-area: t-skills;
     }
     
-    .job-1 {
-        grid-area: job1
+    .s-skills {
+        grid-area: s-skills;
     }
     
-    .job-2 {
-        grid-area: job2
-    }
-    
-    .job-3 {
-        grid-area: job3
+    .certs {
+        grid-area: certs;
     }
     
     .job {
-        background: lighten($primary-color, 5);
+        background: darken(#fff, 15);
         padding: 0.5rem;
-        border-bottom: $secondary-color 5px solid;
+        border-radius: 10px;
+        border-bottom: $secondary-color 9px solid;
+        color: $primary-color;
+        text-align: center;
+
+        h3 {
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+
+        .card-list {
+            display: block;
+            list-style: none;
+            text-align: left;
+        }
     }
 }
+
+// Projects
+.projects {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    img {
+        width: auto;
+        height: 175px;
+        border: 3px #fff solid;
+        border-radius: 10px;
+
+        &:hover() {
+            opacity: 0.7;
+            border-color: $secondary-color;
+            @include easeOut;
+        }
+    }
+
+    .btn-line {
+        display: flex;
+        align-items: flex-start;
+    }
+
+}
+
+// Contact Page
+.center-heading {
+    text-align: center;
+}
+
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+
+    .contact-form {
+        position: relative;
+        height: 350px;
+        width: 400px;
+        max-height: 100%;
+        min-width: 300px;
+        background: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 10px;
+        padding: 1.5rem 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    input, textarea {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin: 10px;
+    }
+
+    textarea {
+        resize: vertical;
+        height: 100px;
+    }
+}
+
+
+// Button Styles
+.btn {
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 1px #444 solid;
+    margin-bottom: 0.3rem;
+
+    &:hover {
+        background: $primary-color;
+        color: set-text-color($secondary-color);
+    }
+}
+
+.btn-dark {
+    @extend .btn;
+    background: $primary-color;
+    color: #fff;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.btn-light {
+    @extend .btn;
+    background: $secondary-color;
+    color: #fff;
+    border-radius: 20px;
+    width: 100%;
+}
+
 
 #main-footer {
     text-align: center;
     padding: 1rem;
-    background: darken($primary-color, 10);
+    background: lighten($primary-color, 10);
     color: set-text-color($primary-color);
     height: 60px;
+    opacity: 0.7;
 }
 
 
