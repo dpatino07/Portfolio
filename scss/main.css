@@ -415,7 +415,7 @@ main#home h1 {
 }
 
 .btn:hover, .btn-dark:hover, .btn-light:hover {
-  background: #444;
+  background: #3BB9FF;
   color: #000;
   -webkit-transition: 0.3s;
   transition: 0.3s;

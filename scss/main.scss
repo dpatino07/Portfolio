@@ -223,8 +223,8 @@ main {
     font-family: Arial, Helvetica, sans-serif;
 
     &:hover {
-        background: $primary-color;
-        color: set-text-color($secondary-color);
+        background: $secondary-color;
+        color: #000;
         transition: 0.3s;
     }
 }
