@@ -333,6 +333,9 @@ main#home h1 {
   grid-gap: 0.7rem;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .projects img {
@@ -378,6 +381,8 @@ main#home h1 {
 }
 
 .contact-section .contact-form {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: relative;
   height: 350px;
   width: 400px;
@@ -407,6 +412,7 @@ main#home h1 {
 }
 
 .btn, .btn-dark, .btn-light {
+  background: #dadada;
   display: block;
   padding: 0.5rem 1rem;
   border: 1px #444 solid;
@@ -415,24 +421,43 @@ main#home h1 {
 }
 
 .btn:hover, .btn-dark:hover, .btn-light:hover {
-  background: #3BB9FF;
-  color: #000;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3BB9FF), to(#0068a1));
+  background: linear-gradient(to bottom, #3BB9FF, #0068a1);
+  color: #fff;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .btn-dark {
-  background: #444;
+  background: -webkit-gradient(linear, left top, left bottom, from(#757575), to(#424242));
+  background: linear-gradient(to bottom, #757575, #424242);
   color: #fff;
   width: 100%;
   border-radius: 10px;
 }
 
+.btn-dark:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#3BB9FF), to(#00476e));
+  background: linear-gradient(to bottom, #3BB9FF, #00476e);
+  color: #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .btn-light {
-  background: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e4e4e4), to(#b1b1b1));
+  background: linear-gradient(to bottom, #e4e4e4, #b1b1b1);
   color: #000;
   width: 100%;
   border-radius: 10px;
+}
+
+.btn-light:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#0FB9AE), to(#075b55));
+  background: linear-gradient(to bottom, #0FB9AE, #075b55);
+  color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 #main-footer {

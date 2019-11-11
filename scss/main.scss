@@ -152,6 +152,8 @@ main {
     display: grid;
     grid-gap: 0.7rem;
     grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-content: center;
 
     img {
         width: auto;
@@ -186,6 +188,7 @@ main {
     margin-top: 1rem;
 
     .contact-form {
+        box-sizing: border-box;
         position: relative;
         height: 350px;
         width: 400px;
@@ -216,6 +219,7 @@ main {
 
 // Button Styles
 .btn {
+    background: rgb(218, 218, 218);
     display: block;
     padding: 0.5rem 1rem;
     border: 1px #444 solid;
@@ -223,26 +227,38 @@ main {
     font-family: Arial, Helvetica, sans-serif;
 
     &:hover {
-        background: $secondary-color;
-        color: #000;
+        background: linear-gradient(to bottom, $secondary-color, darken($secondary-color, 30));
+        color: #fff;
         transition: 0.3s;
     }
 }
 
 .btn-dark {
     @extend .btn;
-    background: $primary-color;
+    background: linear-gradient(to bottom, rgb(117, 117, 117), darken(rgb(117, 117, 117), 20));
     color: set-text-color($primary-color);
     width: 100%;
     border-radius: 10px;
+
+    &:hover {
+        background: linear-gradient(to bottom, $secondary-color, darken($secondary-color, 40));
+        color: set-text-color($secondary-color);
+        transition: 0.3s;
+    }
 }
 
 .btn-light {
     @extend .btn;
-    background: #fff;
+    background: linear-gradient(to bottom, rgb(228, 228, 228), darken(rgb(228, 228, 228), 20));
     color: set-text-color($secondary-color);
     width: 100%;
     border-radius: 10px;
+
+    &:hover {
+        background: linear-gradient(to bottom, #0FB9AE, darken(#0FB9AE, 20));
+        color: set-text-color($primary-color);
+        transition: 0.3s;
+    }
 }
 
 
